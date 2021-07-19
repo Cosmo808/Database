@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patient_filter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../static/plugins/query/patient_filter.css">
+    <script src="https://kit.fontawesome.com/3d378ee4ef.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <header>
+        <div class="container-fluid p-0">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="http://127.0.0.1:8000/cosmo/"><h1>查询主页</h1></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                            <a class="nav-link">快捷查询：</a>
+                            </li>
+                            <li class="nav-item active">
+                            <a class="nav-link" href="http://127.0.0.1:8000/query_patient/" target="_blank">病人信息查询</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1:8000/patient_filter/" target="_blank">病人筛选</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <div class="dropdown">
+                                    <a href="#" class="nav-link">其他查询界面</a>
+                                    <div class="dropdown-content">
+                                        <a href="http://127.0.0.1:8000/ill_doctor_filter/" target="_blank">筛选有特定疾病标注信息和标注医生的病人</a>
+                                        <a href="http://127.0.0.1:8000/ill_gender_hospital_filter_exam/" target="_blank">筛选特定医院的病人</a>
+                                        <a href="http://127.0.0.1:8000/anatomy_doctor_filter/" target="_blank">筛选有特定解剖标注信息的病人及图片地址</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>   
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>  
+
+        <section class="container-fluid">
+            <section class="row">
+                <section class="col-md-1"></section>
+                <section class="col-md-4">
+                    <div class="query">
+                        <form action="http://127.0.0.1:8000/patient_filter/" method="post" class="form-container" role="form">
+                            <div class="form-group">
+                                <div >
+                                    <div class="d-flex justify-content-center">
+                                        <i class="fas fa-search fa-7x py-2 pr-3"></i>
+                                    </div>
+                                    <h4 class="text-center">病人筛选</h4>
+                                    <h3 class="text-center">Patient Filter</h3>
+                                    <label><h5>起始日期：</h5></label>
+                                    <input type="text" id="startyear" name="sy" placeholder="year"  style = "width:90px" autofocus>
+                                    <input type="text" id="startmonth" name="sm" placeholder="month"  style = "width:90px" autofocus>
+                                    <input type="text" id="startday" name="sd" placeholder="day"  style = "width:90px" autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label><h5>终止日期：</h5></label>
+                                    <input type="text" id="endyear" name="ey" placeholder="year"  style = "width:90px" autofocus>
+                                    <input type="text" id="endmonth" name="em" placeholder="month"  style = "width:90px" autofocus> 
+                                    <input type="text" id="endday" name="ed" placeholder="day"  style = "width:90px" autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label for="gender_patient"><h5>性别：</h5></label>
+                                    <input type="text" id="gender_patient" name="gender" placeholder="男" style = "width:100px" autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <label for="age_patient"><h5>筛选年龄范围：</h5></label>
+                                    大于<input type="text" id="age_patient" name="age" placeholder="50" style = "width:100px" autofocus>
+                                    <label for="age_patient">岁</label>
+                                </div>
+                            </div><br>
+                            <div class="form-group">
+                                <div align="center">
+                                    <input class="btn btn-primary btn-lg px-5 py-2" type="submit" value="开始筛选">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="notice">
+
+                        {% if error %}
+
+                        <form class="form-container">
+                            <div class="panel" align="center">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">ERROR</h1>
+                                </div>
+                                <div class="panel-body">
+                                    <h3>病人不存在！</h3>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        {% elif warning %}
+
+                        <form class="form-container">
+                            <div class="panel" align="center">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">WARNING</h1>
+                                </div>
+                                <div class="panel-body">
+                                    <h3>请输入正确的内容！</h3>
+                                </div>
+                            </div>
+                        </form>
+
+                        {% else %}
+
+                        <form class="form-container">
+                            <div class="panel" align="center">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">SUCCESS</h1>
+                                </div>
+                                <div class="panel-body">
+                                    <h3>查询成功！共有{{ number }}条结果</h3>
+                                </div>
+                            </div>
+                        </form>
+
+                        {% endif %}
+
+                    </div>
+
+                </section>
+
+                <section class="col-md-6">
+                    
+                    <form class="form-container">
+
+                        <table style="width: 850px;" class="table table-striped table-hover table-bordered text-center">
+                            <tr class="info">
+                                {% for ele in elements %}
+                                    <th style="text-align:center; font-family: var(--ZCOOL); font-size: 1.3em;">{{ele}}</th>
+                                {% endfor %}
+                            </tr>
+                            
+                            {% if warning or error %}
+
+                                {% for pl in loop1 %}
+                                <tr class="warning">
+                                    {% for l in loop2 %}
+                                        <td ><h3></h3></td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+
+                            {% else %}
+
+                                {% for pl in page.object_list %}
+                                <tr class="warning">
+                                    {% for l in pl %}
+                                        <td >{{l}} </td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+
+                            {% endif %}
+
+                        </table>
+                        
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item {% if not prev_page_url %} disabled {% endif %}">
+                                    <a class="page-link" href="{{ prev_page_url }}" tabindex="-1" aria-disabled="true">Previous</a>
+                                </li>
+
+                                    {% for n in page.paginator.page_range %}
+
+                                        {% if page.number == n %}
+
+                                            <li class="page-item active" aria-current="page">
+                                                <a class="page-link" href="?page={{ n }}">{{ n }} <span> </a>
+                                            </li>
+
+                                        {% elif n > page.number|add:-3 and n < page.number|add:3 %}
+                                        
+                                            <li class="page-item">
+                                                <a class="page-link" href="?page={{ n }}">{{ n }}</a>
+                                            </li>
+
+                                        {% endif %}
+
+                                    {% endfor %}
+
+                                <li class="page-item {% if not next_page_url %} disabled {% endif %}">
+                                    <a class="page-link" href="{{ next_page_url }}">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </form>
+
+                </section>
+
+            </section>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container-fluid p-0">
+            <div class="row text-left">
+                <div class="col-md-4">
+                    <h4 class="text-light">About Us</h4>
+                    <p class="text-muted">数据库原理 陈鸣 3190103252</p>
+                    <p class="pt4 text-muted">
+                        Copyright ©2021 All rights reserved | This template is made with by
+                        <span>Cosmo</span>
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <h4 class="text-ligjt">Newsletter</h4>
+                    <p class="text-muted">Stay Updated</p>
+                    <form class="form-inline">
+                        <div class="col pl-">
+                            <div class="input-group pr-5">
+                                <input type="text" class="form-control bg-dark text-white" placeholder="Email">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2 col-sm-12">
+                    <h4 class="text-light">Follow Us</h4>
+                    <p class="text-muted">Let us be social !</p>
+                    <div class="column">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" 
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script>
+
+        /*Sticky Navigation*/
+
+        let navbar=$(".navbar");
+
+        $(window).scroll(function(){
+            let oTop=$("footer").offset().top-window.innerHeight;
+            if($(window).scrollTop()>oTop){
+                navbar.addClass("sticky");
+            }else{
+                navbar.removeClass("sticky");
+            }
+        })
+
+    </script>
+
+</body>
+</html>

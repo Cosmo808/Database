@@ -1,0 +1,534 @@
+/*Google Font*/
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Patua+One&family=Rubik:ital,wght@0,300;0,400;1,300&family=Sniglet:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Zhi+Mang+Xing&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+header.section{
+    overflow-x: hidden;
+}
+
+:root{
+    --Snigle-font:"Sniglet",cursive;
+    --Rubik:"Rubik",cursive;
+    --Patus:"Patua One",cursive;
+    --Lobster:"Lobster",cursive;
+    --light-black:#2e2c2caf;
+    --Liu:"Liu Jian Mao Cao",cursive;
+    --Ma:"Ma Shan Zheng",cursive;
+    --ZCOOL:"ZCOOL XiaoWei",cursive;
+    --Zhi:"Zhi Mang Xing",cursive;
+    --light-gray:rgba(255, 255, 255, 0.8);
+    --headergradient:linear-gradient(
+        to bottom,
+        #7F7FD5,
+        #86A8E7,
+        #91EAE4
+    );
+    --maingradient:linear-gradient(
+        to right,
+        #ad83f1,
+        #20BDFF,
+        #A5FECB
+    );
+    --panelgradient:linear-gradient(
+        to left top,
+        #757F9A,
+        #D7DDE8
+    );
+    --rectgradient:linear-gradient(
+        to right top,
+        #2BC0E4,
+        #f5fa9c
+    );
+}
+
+img{
+    border-radius: 0.7em;
+}
+
+header {
+    background: var(--headergradient);
+}
+
+header a{
+    font-family:var(--Ma);
+    font-size: 2.2em;
+    color: whitesmoke;
+}
+
+.dropdown-content a:hover{
+    background: #ddd;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.nav-item:last-child{
+    padding-right: 8em;
+}
+
+.nav-item{
+    padding:1em;
+}
+
+.navbar-brand{
+    padding-left: 3rem;
+}
+
+header.nav-link:hover{
+    color:black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+header
+.container h2 {
+    font-family: var(--Lobster);
+    font-size: 3em;
+    color: rgb(241, 217, 217);
+}
+
+header
+.container a {
+    font-family: var(--Zhi);
+    font-size: 1em;
+    color: rgb(241, 217, 217);
+}
+
+header
+.container img {
+    width: 150%;
+}
+
+header
+.container.col-md-7 h6 {
+    padding: 1vmin;
+    letter-spacing: 4px;
+}
+
+header
+.container.col-md-7 h1 {
+    font-size: 8.5vmin;
+    font-weight: bold;
+    padding: 0.1em 0em;
+}
+
+header
+.container.col-md-7 p {
+    padding: 1vmin 5vmin;
+}
+
+header
+.container.col-md-7 button {
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.desktop{
+    background: var(--panelgradient);
+    display: inline-block;
+    border-radius: 3em;
+    padding: 2vmin 4.5vmin;
+    margin: 1em;
+}
+
+header
+.row
+.col-md-12 h1{
+    font-family: var(--Zhi);
+    font-size: 4em;
+    color: var(--light-gray);
+}
+
+header
+.row
+.col-md-12 p{
+    font-family:var(--Ma);
+    font-size: 2em;
+    color: var(--light-gray);
+}
+
+header
+.platform a{
+    text-decoration: none;
+}
+
+header
+.platform h3{
+    font-family: var(--Ma);
+    color: lightcyan;
+}
+
+header .platform p {
+    font-family:var(--Lobster);
+    font-size: 1.6em;
+    color: lightcyan;
+}
+
+/*main*/
+
+main {
+    background: var(--maingradient);
+}
+
+/*section 1*/
+  
+.section-1{
+    padding: 10vmin 0vmin;
+}
+
+.section-1 a{
+    color: darkslategray;
+}
+
+.section-1
+.row
+.col-md-6
+.camus img{
+    opacity: 0.9;
+    width: 117%;
+    border-radius: 0.8em;
+}
+
+.section-1
+.row
+.col-md-6
+.kant img{
+    opacity: 0.9;
+    width: 85%;
+    border-radius: 0.8em;
+}
+
+.section-1
+.row
+.col-md-6:last-child{
+    position: relative;
+}
+
+.section-1
+.row
+.col-md-6
+.panel
+.camus{
+    position: absolute;
+    top: 5vmin;
+    left: 6vmin;
+    background: var(--panelgradient);
+    border-radius: 5px;
+    text-align: left;
+    padding: 12vmin 5vmin 6vmin 10vmin;
+    box-shadow: 0px 25px 42px rgba(0,0,0,0.2) ;
+    z-index: 1;
+}
+
+.section-1
+.row
+.col-md-6
+.panel
+.kant{
+    position: absolute;
+    top: 5vmin;
+    left: -9vmin;
+    background: var(--panelgradient);
+    border-radius: 5px;
+    text-align: left;
+    padding: 8vmin 5vmin 6vmin 10vmin;
+    box-shadow: 0px 25px 42px rgba(0,0,0,0.2) ;
+    z-index: 1;
+}
+
+.section-1
+.row
+.col-md-6
+.panel h1{
+    font-family: var(--ZCOOL);
+    font-weight: bold;
+    padding: 0em 1.2em 0em ;
+    font-size: 2.5em;
+}
+
+.section-1
+.row
+.col-md-6
+.panel p{
+    font-family: var(--Ma);
+    font-size: 2.1em;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/*section 2*/
+
+.cover{
+    width: 100%;
+    height: 65vmin;
+    background: url('../../static/images/lol/vn.jpg');
+    background-position: -24rem -19rem;
+    background-size: 120%;
+    position: relative;
+}
+
+.cover
+.content{
+    background: rgba(27, 27, 27, 0.7);
+    height: 100%;
+    width:100%;
+    padding-top: 3.5vmin;
+}
+
+.cover
+.content > h1{
+    font-family: var(--Zhi);
+    font-size: 6.5vmin;
+    color: whitesmoke;
+    padding: 0.4em;
+}
+
+.cover
+.content > p{
+    font-family: var(--Ma);
+    font-size: 3.7vmin;
+    color: #e5e5e5;
+    padding: 0.3em;
+}
+
+.numbers
+.rect{
+    position: relative;
+    z-index: 1;
+    background: var(--rectgradient);
+    width: 28rem;
+    height: 18rem;
+    padding-top: 3vmin;
+    margin: 3rem;
+    border-radius: 4em;
+    box-shadow: 1px 2px 50px 0px rgba(255, 0, 0, 0.349);
+}
+
+.numbers{
+    margin-top: -18vmin;
+}
+
+.numbers
+.rect h1{
+    font-family: var(--Zhi);
+    font-size: 3.3rem;
+}
+
+.numbers
+.rect a{
+    text-decoration: none;
+    color: rgb(72, 60, 139);
+}
+
+.numbers
+.rect p{
+    font-family: var(--Ma);
+    font-size: 2.4rem;
+    color: rgb(32, 14, 134);
+}
+
+.purchase > h1{
+    font-family:var(--Ma);
+    font-size: 4em;
+    color: rgba(76, 16, 82, 0.815);
+    padding-top: 15vmin;
+    padding-bottom: 0.1em;
+}
+
+.purchase > p{
+    font-family: var(--Zhi);
+    color: rgba(76, 16, 82, 0.815);
+    font-size:5vmin;
+    padding-bottom: 1vmin;
+}
+
+.purchase
+.cards h1{
+    font-family: var(--Lobster);
+    font-size: 2.5em;
+}
+
+.purchase
+.cards p{
+    font-family:var(--ZCOOL);
+    font-size: 2.5em;
+    padding-top: 0em;
+    color: black;
+}
+
+.purchase
+.cards h3{
+    font-family: var(--Ma);
+    font-size: 2.5em;
+    padding-bottom: 1em;
+    color: tomato;
+}
+
+.purchase
+.cards a{
+    font-family: var(--Ma);
+    font-size: 2.5em;
+    padding-bottom: 1em;
+    color: whitesmoke;
+}
+
+.purchase
+.cards
+.card{
+    width: 22rem;
+    margin: 3vmin;
+}
+
+.cards div{
+    padding: 0;
+    margin: 0;
+}
+
+.cards
+.title{
+    background: rgba(208, 241, 241, 0.199);
+    padding: 1.4rem 2.5rem;
+    font-size: 2vmin;
+}
+
+.cards
+.card-text{
+    padding:2rem 3rem;
+    color: var(--light-black);
+}
+
+.card-body
+.pricing{
+    background: rgba(208, 241, 241, 0.199);
+    border-top-right-radius: 170px;
+    border-top-left-radius: 170px;
+}
+
+.card-body
+.pricing > h1{
+    font-size: 10vmin;
+    padding: 1em 0,5em;
+}
+
+/*section 3*/
+
+.section-3{
+    height:70vmin;
+    margin-top: 15vmin;
+    background: var(--bggradient);
+}
+
+.section-3
+.col-md-12 > h1{
+    padding:2em 0 0.5em 0;
+    color: whitesmoke;
+    font-size: 6vmin;
+}
+
+.section-3
+.col-md-12 > p{
+    padding: 0 4em;
+    padding-bottom: 2em;
+    color: lightgrey;
+    font-size: 3vmin;
+}
+
+.section-3
+.desktop{
+    background: white;
+    display: inline-block;
+    border-radius: 3em;
+    padding: 2vmin 4.5vmin;
+    margin: 1rem;
+}
+
+.section-3
+.desktop h3{
+    font-size: 4vmin;
+}
+
+.section-3
+.desktop p{
+    font-size: 2vmin;
+}
+
+/*Footer*/
+
+footer{
+    background: rgba(0 , 0, 0, 0.815);
+    overflow-x: hidden;
+    padding: 14vmin 18vmin;
+}
+
+footer h4{
+    font-family: var(--Lobster);
+    font-size: 3em;
+}
+
+footer 
+.col-md-5 h4 {
+    font-family: var(--Lobster);
+    font-size: 3em;
+    color: whitesmoke;
+}
+
+
+footer p{
+    font-size: 1.2em;
+    padding: 0.2em;
+}
+
+footer p > span{
+    color: #ff512f;
+}
+
+footer input{
+    border: none !important;
+}
+
+footer input::placeholder{
+    color: white !important;
+}
+
+footer
+.input-group
+.input-group-text{
+    background: var(--headergradient);
+    border: none;
+}
+
+footer
+.column i{
+    color: #dd2476;
+    padding: 0em 1em;
+}
+
+
+/*Sticky Class*/
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.815);
+    z-index: 9999;
+    transition: all 1.5s ease;
+}

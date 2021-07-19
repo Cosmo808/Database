@@ -1,0 +1,210 @@
+/*Google Font*/
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Patua+One&family=Rubik:ital,wght@0,300;0,400;1,300&family=Sniglet:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Zhi+Mang+Xing&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root{
+    --Snigle-font:"Sniglet",cursive;
+    --Rubik:"Rubik",cursive;
+    --Patus:"Patua One",cursive;
+    --Lobster:"Lobster",cursive;
+    --light-black:#2e2c2caf;
+    --Liu:"Liu Jian Mao Cao",cursive;
+    --Ma:"Ma Shan Zheng",cursive;
+    --ZCOOL:"ZCOOL XiaoWei",cursive;
+    --Zhi:"Zhi Mang Xing",cursive;
+    --light-gray:rgba(255, 255, 255, 0.8);
+    --bggradient:linear-gradient(
+        to right top,
+        #7F7FD5,
+        #86A8E7,
+        #91EAE4
+    );
+    --insgradient:linear-gradient(
+        to right top,
+        #405de6,
+        #5851db,
+        #833ab4,
+        #c13584,
+        #e1306c,
+        #fd1d1d
+    );
+}
+
+body{
+    background: var(--bggradient);
+}
+
+/*header*/
+
+header {
+    position: relative;
+    top: 0em;
+}
+
+header a {
+    font-family: var(--Ma);
+    font-size: 2.2em;
+    color: whitesmoke;
+}
+
+.dropdown-content a:hover {
+    background: #ddd;
+}
+
+.dropdown:hover
+.dropdown-content {
+    display: block;
+}
+
+.nav-item:last-child {
+    padding-right: 8em;
+}
+
+.nav-item {
+    padding: 3em;
+}
+
+.navbar-brand {
+    padding-left: 3rem;
+}
+
+header
+.nav-link:hover {
+    color: black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/*main*/
+
+form {
+    background: silver;
+    border-radius: 2em;
+    margin-bottom: 5em;
+}
+
+.form-container {
+    padding: 30px;
+    box-shadow: 0px 7px 7px 7px;
+}
+
+.form-container i {
+    color: rgb(41, 79, 80);
+}
+
+.form-container h4 {
+    font-family: var(--Ma);
+    font-size: 3.8em;
+    padding-top: 0.5em;
+}
+
+.form-container h3 {
+    font-family: var(--Lobster);
+    font-size: 2.6em;
+}
+
+.form-container h6 {
+    font-family: var(--Ma);
+    font-size: 2em;
+}
+
+.form-container p {
+    font-size: 1.2em;
+    padding-top: 0.2em;
+}
+
+.row
+.col-md-6 h1{
+    font-family: var(--Lobster);
+    font-size: 3.5em;
+}
+
+.row
+.col-md-6 h3{
+    font-family: var(--Ma);
+    font-size: 3.5em;
+}
+
+.row
+.col-md-6 td{
+    font-family: var(--ZCOOL);
+    font-size: 2em;
+}
+
+.row
+.col-md-4
+.form-container{
+    position: absolute;
+    top: 15em;
+    width: 35em;
+}
+
+/*Footer*/
+
+footer{
+    background: rgba(0 , 0, 0, 0.815);
+    overflow-x: hidden;
+    padding: 12vmin 18vmin;
+}
+
+footer h4{
+    font-family: var(--Lobster);
+    font-size: 3em;
+}
+
+footer 
+.col-md-5 h4 {
+    font-family: var(--Lobster);
+    font-size: 3em;
+    color: whitesmoke;
+}
+
+
+footer p{
+    font-size: 1.2em;
+    padding: 0.2em;
+}
+
+footer p > span{
+    color: #ff512f;
+}
+
+footer input{
+    border: none !important;
+}
+
+footer input::placeholder{
+    color: white !important;
+}
+
+footer
+.input-group
+.input-group-text{
+    background: var(--headergradient);
+    border: none;
+}
+
+footer
+.column i{
+    color: #dd2476;
+    padding: 0em 1em;
+}
